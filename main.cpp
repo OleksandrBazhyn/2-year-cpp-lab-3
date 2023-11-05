@@ -13,15 +13,21 @@
 #include <syncstream>
 #include <functional>
 
+#include "actionsSets.cpp"
+#include "Duga.h"
+
 const int nt = 5;
 
-
-struct A
+std::string f(char x, int i)
 {
-
-};
+	std::cout << "From set " << x << " has been done act " << i << "\n";
+	return "f";
+}
 
 int main()
 {
-
+	Duga J('j', 8, []()
+		{
+			Duga
+		});
 }
