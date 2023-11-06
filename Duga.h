@@ -1,10 +1,18 @@
-#pragma once
-
-class Duga {
-private:
-	int actions;
-	char name;
-	std::function<std::string()> act;
-public:
-	Duga(char name, int actions, std::function<std::string()> act);
-};
+//#pragma once
+//#ifndef DUGA_H
+//#define DUGA_H
+//
+//#include <functional>
+//#include <string>
+//
+//class Duga {
+//private:
+//	int actions;
+//	std::vector<std::function<std::string>> funcs;
+//public:
+//	Duga();
+//	Duga(int actions, std::function<std::string> func);
+//	std::string GetResult();
+//};
+//
+//#endif // !DUGA_H
