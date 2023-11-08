@@ -22,7 +22,7 @@ Orgraph::Orgraph(std::string value1, std::string value2)
 		});
 
 	orgraph['b'] = fillDuga(5, [&]() {
-		return this->startValues[0] + "B";
+		return this->startValues[1] + "B";
 		});
 	orgraph['c'] = fillDuga(8, [&]() {
 		return this->f('a', 6) + "C";

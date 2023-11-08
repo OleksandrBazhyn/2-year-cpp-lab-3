@@ -13,8 +13,8 @@ const int nt = 5;
 int main()
 {
 	int usednt = 0;
-	std::string start1 = " ";
-	std::string start2 = " ";
+	std::string start1 = "1";
+	std::string start2 = "2";
 
 	Orgraph orgraph(start1, start2);
 
