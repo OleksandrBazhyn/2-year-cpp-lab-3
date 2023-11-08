@@ -66,7 +66,11 @@ std::vector<std::function<std::string()>> Orgraph::fillDuga(int countOfActs, std
 
 std::string Orgraph::f(char x, int i)
 {
-	std::string result = this->orgraph[x][i - 1]();
+	std::string result;
+	for (int j = 0; j < i; j++)
+	{
+		result += this->orgraph[x][i - 1]();
+	}
 	return result;
 }
 
