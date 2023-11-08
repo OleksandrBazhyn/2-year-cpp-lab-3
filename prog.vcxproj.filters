@@ -24,12 +24,18 @@
     <ClCompile Include="Duga.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Orgraph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Duga.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Orgraph.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

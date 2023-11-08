@@ -132,12 +132,14 @@
     <ClCompile Include="actionsSets.cpp" />
     <ClCompile Include="Duga.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Orgraph.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Duga.h" />
+    <ClInclude Include="Orgraph.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
