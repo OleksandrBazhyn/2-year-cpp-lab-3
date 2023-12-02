@@ -57,19 +57,19 @@ std::string Orgraph::GetResult()
 
 	std::mutex mutex;
 
-	std::thread t4([&] {Node3 += Node1 + f('c', 8); work_done2.count_down(); });
-	std::thread t5([&] {mutex.lock(); Node4 += Node1 + f('d', 5); mutex.unlock(); work_done2.count_down(); });
-	std::thread t6([&] {mutex.lock(); Node4 += Node2 + f('e', 8); mutex.unlock(); work_done2.count_down(); });
-	std::thread t7([&] {Node5 += Node2 + f('f', 9); work_done2.count_down(); });
+	t1 = std::thread([&] {Node3 += Node1 + f('c', 8); work_done2.count_down(); });
+	t2 = std::thread([&] {mutex.lock(); Node4 += Node1 + f('d', 5); mutex.unlock(); work_done2.count_down(); });
+	std::thread t3([&] {mutex.lock(); Node4 += Node2 + f('e', 8); mutex.unlock(); work_done2.count_down(); });
+	std::thread t4([&] {Node5 += Node2 + f('f', 9); work_done2.count_down(); });
 
 	this->nt -= 4;
 	std::cout << "Duge  C, D, E and F are working. nt was left = " << this->nt << "." << std::endl;
 
 	work_done2.wait();
+	t1.join();
+	t2.join();
+	t3.join();
 	t4.join();
-	t5.join();
-	t6.join();
-	t7.join();
 	this->nt += 4;
 
 	std::cout << "Duge C, D, E and F have been completed. nt was left = " << this->nt << "." << std::endl;
@@ -78,23 +78,23 @@ std::string Orgraph::GetResult()
 
 	std::string Node6 = "";
 
-	std::thread t8([&] {mutex.lock(); Node6 += Node3 + f('g', 4); mutex.unlock(); work_done3.count_down(); });
-	std::thread t9([&] {mutex.lock(); Node6 += Node4 + f('h', 5); mutex.unlock(); work_done3.count_down(); });
-	std::thread t10([&] {mutex.lock(); Node6 += Node5 + f('i', 6); mutex.unlock(); work_done3.count_down(); });
+	t1 = std::thread([&] {mutex.lock(); Node6 += Node3 + f('g', 4); mutex.unlock(); work_done3.count_down(); });
+	t2 = std::thread([&] {mutex.lock(); Node6 += Node4 + f('h', 5); mutex.unlock(); work_done3.count_down(); });
+	t3 = std::thread([&] {mutex.lock(); Node6 += Node5 + f('i', 6); mutex.unlock(); work_done3.count_down(); });
 
 	this->nt -= 3;
 	std::cout << "Duge G, H and I are working. nt was left = " << this->nt << "." << std::endl;
 
 	work_done3.wait();
-	t8.join();
-	t9.join();
-	t10.join();
+	t1.join();
+	t2.join();
+	t3.join();
 	this->nt += 3;
 
 	std::cout << "Duge G, H and I have been completed. nt was left = " << this->nt << "." << std::endl;
 
-	std::thread t11([&] {result = Node6 + f('j', 8); });
-	t11.join();
+	t1 = std::thread([&] {result = Node6 + f('j', 8); });
+	t1.join();
 
 	std::cout << "Orgraph has finished work!" << std::endl;
 
