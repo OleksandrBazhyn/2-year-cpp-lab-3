@@ -8,9 +8,10 @@
 class Orgraph {
 private:
 	std::string f(char x, int i);
+	std::string CalculateDuga(char duga);
 
 	std::string startValues[2];
-	const int nt = 5;
+	int nt = 5;
 	static int usednt;
 	//std::unordered_map<char, std::vector<std::function<std::string()>>> orgraph;
 

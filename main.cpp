@@ -10,6 +10,7 @@
 
 const int nt = 5;
 
+
 int main()
 {
 	int usednt = 0;
