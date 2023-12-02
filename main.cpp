@@ -7,13 +7,18 @@
 #include "Orgraph.h"
 
 #include <iostream>
+#include <fstream>
 
 const int nt = 5;
 
+void WriteResultToFile(const std::string& filename, const std::string& data) {
+	std::ofstream outfile(filename);
+	outfile << data;
+	outfile.close();
+}
 
 int main()
 {
-	int usednt = 0;
 	std::string start1 = "1";
 	std::string start2 = "2";
 
@@ -21,5 +26,7 @@ int main()
 
 	std::string result = orgraph.GetResult();
 
-	std::cout << orgraph.orgraph['j'].size() << " with value " << result << std::endl;
+	WriteResultToFile("result.txt", result);
+
+	std::cout << orgraph.GetResult() << std::endl;
 }

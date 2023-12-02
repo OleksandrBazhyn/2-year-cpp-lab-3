@@ -8,18 +8,12 @@
 class Orgraph {
 private:
 	std::string f(char x, int i);
-	std::string CalculateDuga(char duga);
 
 	std::string startValues[2];
 	int nt = 5;
-	static int usednt;
-	//std::unordered_map<char, std::vector<std::function<std::string()>>> orgraph;
-
-	std::vector<std::function<std::string()>> fillDuga(int countOfActs, std::function<std::string()>  func);
 public:
-	Orgraph(std::string value1, std::string value2);
+	Orgraph(const std::string& startValue1, const std::string& startValue2);
 	std::string GetResult();
-	std::unordered_map<char, std::vector<std::function<std::string()>>> orgraph;
 };
 
 #endif
