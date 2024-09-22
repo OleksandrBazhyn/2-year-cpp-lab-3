@@ -5,4 +5,4 @@ project(prog)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(prog main.cpp Orgraph.cpp Orgraph.h)
+add_executable(prog main.cpp Orgraph.cpp Orgraph.h Utils.cpp Utils.h)
